@@ -1,10 +1,56 @@
 import React from 'react'
-import { Stack, Typography } from '@mui/material'
+import {
+    Box,
+    Divider,
+    Drawer,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Stack,
+    Typography
+} from '@mui/material'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import { rootColors } from '../../Utilities/rootColors';
 
 const Navbar: React.FC = () => {
+    const [open, setOpen] = React.useState(false);
+
+    const toggleDrawer = (newOpen: boolean) => () => {
+        setOpen(newOpen);
+    };
+
+    const DrawerList = (
+        <Box sx={{ width: 300, }} role="presentation" onClick={toggleDrawer(false)}>
+            <List>
+                {navLinks.map((text, index) => (
+                    <Link to={text?.path}
+                        style={{
+                            textDecoration: 'none',
+                            color: rootColors?.text
+                        }}>
+                        <ListItem key={index} disablePadding >
+                            <ListItemButton>
+                                <ListItemText primary={text?.title} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                ))}
+            </List>
+            <Divider />
+            <List>
+                {['Connect',].map((text, index) => (
+                    <ListItem key={index} disablePadding>
+                        <ListItemButton>
+
+                            <ListItemText primary={text} />
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
     return (
         <Stack component={'nav'}
             sx={{
@@ -19,7 +65,6 @@ const Navbar: React.FC = () => {
                 alignItems: 'center',
                 padding: { xs: '10px 20px', md: '1rem 2rem' },
                 borderBottom: `1px solid ${rootColors?.textSecondry}`,
-                // borderImage: `linear-gradient(to right, #2022252f,${rootColors?.textSecondry} , #2022252f) 1`
             }}
         >
             <Stack component={Typography}>MetaMask</Stack>
@@ -34,9 +79,21 @@ const Navbar: React.FC = () => {
                 ))}
             </Stack>
             <Stack sx={{ display: { xs: 'none', md: 'flex' } }}>Login</Stack>
-            <Stack sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <Stack sx={{ display: { xs: 'flex', md: 'none' } }}
+                onClick={toggleDrawer(true)}>
                 <MenuIcon sx={{ fontSize: 40 }} />
             </Stack>
+            <Drawer open={open} onClose={toggleDrawer(false)}
+                PaperProps={{
+                    sx: {
+                        background: 'rgba(21, 26, 32, 0.1)',
+                        backdropFilter: 'Blur(30px)',
+                        color: rootColors.text,
+                        borderRadius: '1rem'
+                    }
+                }}>
+                {DrawerList}
+            </Drawer>
         </Stack >
     )
 }
