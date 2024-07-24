@@ -33,7 +33,8 @@ const Home: React.FC = () => {
                     sx={{
                         justifyContent: 'center',
                         alignItems: 'center',
-                        gap: 2
+                        gap: 2,
+                        mt: 5
                     }}>
                     <Typography
                         variant='h4'
