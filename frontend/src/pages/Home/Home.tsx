@@ -8,6 +8,7 @@ import key from '../../assets/key.json'
 import Lottie from 'lottie-react'
 import Faq from '../../components/Faq/Faq'
 import Card from '../../components/Card/Card'
+import SocialMedia from '../../components/SocialMedia/SocialMedia'
 
 const Home: React.FC = () => {
     return (
@@ -126,6 +127,7 @@ const Home: React.FC = () => {
                     </Stack>
 
                 </Stack>
+                <SocialMedia />
                 <Faq />
             </Stack>
         </Stack>
