@@ -1,14 +1,8 @@
 import React from "react";
-import { Stack } from "@mui/material";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import PhoneIcon from "@mui/icons-material/Phone";
-import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
-import PaymentIcon from "@mui/icons-material/Payment";
-import TuneIcon from "@mui/icons-material/Tune";
-import SensorsIcon from "@mui/icons-material/Sensors";
+import { Stack, Typography } from "@mui/material";
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { Link, useLocation } from "react-router-dom";
-import ChecklistIcon from "@mui/icons-material/Checklist";
-import CampaignIcon from "@mui/icons-material/Campaign";
 import { Outlet } from 'react-router-dom'
 import { rootColors } from "../../Utilities/rootColors";
 
@@ -58,9 +52,9 @@ const Dapp: React.FC = () => {
                             >
                                 {item?.icon}
                             </Stack>
-                            <Stack sx={{ fontSize: "16px", fontWeight: 400 }}>
+                            <Typography sx={{ fontSize: "16px", fontWeight: 400 }}>
                                 {item?.title}
-                            </Stack>
+                            </Typography>
                         </Stack>
                     </Link>
                 ))}
@@ -76,10 +70,10 @@ export default Dapp;
 
 const navLinks = [
     {
-        title: "Assistants",
-        path: "/assistants",
+        title: "Deposit",
+        path: "/dapp/deposit",
         icon: (
-            <AccountBoxIcon
+            <AccountBalanceIcon
                 sx={{
                     width: "23.33px",
                     height: "23.33px",
@@ -89,10 +83,10 @@ const navLinks = [
         ),
     },
     {
-        title: "Phone Numbers",
-        path: "/phonenumbers",
+        title: "Withdraw",
+        path: "/dapp/withdraw",
         icon: (
-            <PhoneIcon
+            <CurrencyRupeeIcon
                 sx={{
                     width: "23.33px",
                     height: "23.33px",
@@ -101,82 +95,5 @@ const navLinks = [
             />
         ),
     },
-    {
-        title: "Contact Lists",
-        path: "/contactlist",
-        icon: (
-            <ChecklistIcon
-                sx={{
-                    width: "23.33px",
-                    height: "23.33px",
-                    color: "white",
-                }}
-            />
-        ),
-    },
-    {
-        title: "Call Logs",
-        path: "/calllogs",
-        icon: (
-            <PhoneCallbackIcon
-                sx={{
-                    width: "23.33px",
-                    height: "23.33px",
-                    color: "white",
-                }}
-            />
-        ),
-    },
-    {
-        title: "Billing",
-        path: "/billing",
-        icon: (
-            <PaymentIcon
-                sx={{
-                    width: "23.33px",
-                    height: "23.33px",
-                    color: "white",
-                }}
-            />
-        ),
-    },
-    {
-        title: "Campaigns",
-        path: "/campaigns",
-        icon: (
-            <CampaignIcon
-                sx={{
-                    width: "23.33px",
-                    height: "23.33px",
-                    color: "white",
-                }}
-            />
-        ),
-    },
-    {
-        title: "Integrations",
-        path: "/integrations/ghl",
-        icon: (
-            <SensorsIcon
-                sx={{
-                    width: "23.33px",
-                    height: "23.33px",
-                    color: "white",
-                }}
-            />
-        ),
-    },
-    {
-        title: "Accounts",
-        path: "/accounts",
-        icon: (
-            <TuneIcon
-                sx={{
-                    width: "23.33px",
-                    height: "23.33px",
-                    color: "white",
-                }}
-            />
-        ),
-    },
+
 ];
