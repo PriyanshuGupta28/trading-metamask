@@ -60,7 +60,12 @@ const Dapp: React.FC = () => {
                     </Link>
                 ))}
             </Stack>
-            <Stack sx={{ height: "700vh", ml: "300px", padding: "10px 20px" }}>
+            <Stack sx={{
+                flex: 1,
+                marginLeft: { xs: 0, md: "300px" },
+                overflowY: "auto",
+                mt: 3,
+            }}>
                 <Outlet />
             </Stack>
         </Stack>
