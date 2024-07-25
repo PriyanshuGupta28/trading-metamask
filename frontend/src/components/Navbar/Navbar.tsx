@@ -106,8 +106,12 @@ const navLinks = [
         path: '/'
     },
     {
-        title: 'Fund',
+        title: 'Deposit',
         path: '/dapp/deposit'
+    },
+    {
+        title: 'Withdraw',
+        path: '/dapp/withdraw'
     },
     {
         title: 'About Us',
