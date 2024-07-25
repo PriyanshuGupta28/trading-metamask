@@ -2,6 +2,7 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 import { Link, useLocation } from "react-router-dom";
 import { Outlet } from 'react-router-dom'
 import { rootColors } from "../../Utilities/rootColors";
@@ -87,6 +88,19 @@ const navLinks = [
         path: "/dapp/withdraw",
         icon: (
             <CurrencyRupeeIcon
+                sx={{
+                    width: "23.33px",
+                    height: "23.33px",
+                    color: "white",
+                }}
+            />
+        ),
+    },
+    {
+        title: "Transactions",
+        path: "/dapp/transactions",
+        icon: (
+            <CreditCardIcon
                 sx={{
                     width: "23.33px",
                     height: "23.33px",
