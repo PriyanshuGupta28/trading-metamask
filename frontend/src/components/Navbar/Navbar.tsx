@@ -107,7 +107,7 @@ const navLinks = [
     },
     {
         title: 'Fund',
-        path: '/dapp/fund'
+        path: '/dapp/deposit'
     },
     {
         title: 'About Us',
