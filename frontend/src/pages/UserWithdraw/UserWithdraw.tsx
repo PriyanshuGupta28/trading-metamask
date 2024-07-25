@@ -1,7 +1,8 @@
 import React from 'react'
-import { Grid, Stack } from '@mui/material'
+import { Grid, Stack, Typography } from '@mui/material'
 import { UserWithdrawCardData } from '../../Utilities/utilitiesData'
 import DetailsCard from '../../components/DetailsCard/DetailsCard'
+import DepositPaymentCard from '../DepositPaymentCard/DepositPaymentCard'
 
 const UserWithdraw: React.FC = () => {
     return (
@@ -17,6 +18,10 @@ const UserWithdraw: React.FC = () => {
                         </Grid>
                     ))}
                 </Grid>
+                <Typography sx={{ textAlign: 'center' }}>
+                    current network : Binace Smart Chain
+                </Typography>
+                <DepositPaymentCard />
             </Stack>
         </Stack>
     )
