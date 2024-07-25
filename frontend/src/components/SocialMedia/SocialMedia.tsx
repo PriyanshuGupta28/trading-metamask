@@ -4,6 +4,7 @@ import Lottie from 'lottie-react'
 import x from '../../assets/x.json'
 import discord from '../../assets/discord.json'
 import insta from '../../assets/insta.json'
+import telegram from '../../assets/telegram.json'
 import facebook from '../../assets/facebook.json'
 
 const SocialMedia: React.FC = () => {
@@ -34,6 +35,9 @@ const SocialMedia: React.FC = () => {
                 <Stack sx={{ width: '10rem' }}>
                     <Lottie animationData={insta} />
                 </Stack >
+                <Stack sx={{ width: '10rem' }}>
+                    <Lottie animationData={telegram} />
+                </Stack>
                 <Stack sx={{ width: '10rem' }}>
                     <Lottie animationData={facebook} />
                 </Stack>
