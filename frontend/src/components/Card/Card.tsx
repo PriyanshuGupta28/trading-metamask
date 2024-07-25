@@ -1,8 +1,9 @@
 import { Stack, Typography } from '@mui/material'
 import React from 'react'
 import { rootColors } from '../../Utilities/rootColors'
+import { cardDetailsTypes } from '../../Utilities/types'
 
-const Card: React.FC = () => {
+const Card: React.FC<cardDetailsTypes> = () => {
     return (
         <Stack
             sx={{
