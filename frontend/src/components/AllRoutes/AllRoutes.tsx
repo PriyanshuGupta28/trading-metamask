@@ -7,6 +7,9 @@ import News from '../../pages/News/News'
 import Dapp from '../../pages/Dapp/Dapp'
 import Fund from '../../pages/Fund/Fund'
 import Error404 from '../Error404/Error404'
+import UserDeposit from '../../pages/UserDeposit/UserDeposit'
+import UserWithdraw from '../../pages/UserWithdraw/UserWithdraw'
+import UserTransactions from '../../pages/UserTransactions/UserTransactions'
 
 const AllRoutes: React.FC = () => {
     return (
@@ -17,6 +20,9 @@ const AllRoutes: React.FC = () => {
             <Route path='/news' element={<News />} />
             <Route path='/dapp' element={<Dapp />} >
                 <Route path='fund' element={<Fund />} />
+                <Route path='deposit' element={<UserDeposit />} />
+                <Route path='withdraw' element={<UserWithdraw />} />
+                <Route path='transactions' element={<UserTransactions />} />
             </Route>
             <Route path='*' element={<Error404 />} />
         </Routes>
