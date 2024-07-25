@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     const DrawerList = (
         <Box sx={{ width: 300, }} role="presentation" onClick={toggleDrawer(false)}>
             <List>
-                {navLinks.map((text, index) => (
+                {navLinksMob.map((text, index) => (
                     <Link to={text?.path}
                         style={{
                             textDecoration: 'none',
@@ -106,12 +106,39 @@ const navLinks = [
         path: '/'
     },
     {
+        title: 'Fund',
+        path: '/dapp/deposit'
+    },
+    {
+        title: 'About Us',
+        path: '/about-us'
+    },
+    {
+        title: 'Contact Us',
+        path: '/contact-us'
+    },
+    {
+        title: 'News',
+        path: '/news'
+    },
+
+]
+const navLinksMob = [
+    {
+        title: 'Home',
+        path: '/'
+    },
+    {
         title: 'Deposit',
         path: '/dapp/deposit'
     },
     {
         title: 'Withdraw',
         path: '/dapp/withdraw'
+    },
+    {
+        title: 'Transactions',
+        path: '/dapp/transactions'
     },
     {
         title: 'About Us',
