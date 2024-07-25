@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from '../../components/HeroSection/HeroSection'
-import { Stack, Typography } from '@mui/material'
+import { Grid, Stack, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { rootColors } from '../../Utilities/rootColors'
 import laptop from '../../assets/laptop.json'
@@ -9,6 +9,7 @@ import Lottie from 'lottie-react'
 import Faq from '../../components/Faq/Faq'
 import Card from '../../components/Card/Card'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
+import { CardData } from '../../Utilities/utilitiesData'
 
 const Home: React.FC = () => {
     return (
@@ -18,17 +19,13 @@ const Home: React.FC = () => {
         }}>
             <Stack sx={{ width: '90%', gap: { xs: 5, md: 3 } }}>
                 <HeroSection />
-                <Stack
-                    sx={{
-                        flexDirection: { xs: "column", md: 'row' },
-                        justifyContent: 'space-between',
-                        gap: { xs: 3, md: 0 }
-                    }}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </Stack>
+                <Grid container spacing={2}>
+                    {CardData?.map((item, index) => (
+                        <Grid item xs={12} md={3}>
+                            <Card key={index} fund={item?.fund} type={item?.type} />
+                        </Grid>
+                    ))}
+                </Grid>
                 <Stack
                     sx={{
                         justifyContent: 'center',
