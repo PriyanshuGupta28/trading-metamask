@@ -2,20 +2,20 @@ import { cardDetailsTypes } from "./types";
 
 export const CardData: cardDetailsTypes[] = [
     {
-        fund: '$53,642,630.05',
+        fund: '53,642,630.05',
         type: 'Assets Under Management'
     },
     {
-        fund: '$53,642,630.05',
-        type: 'Assets Under Management'
+        fund: '47,390,696.35',
+        type: 'Distributed to Investors'
     },
     {
-        fund: '$53,642,630.05',
-        type: 'Assets Under Management'
+        fund: '14.91%',
+        type: 'Average monthly yield'
     },
     {
-        fund: '$53,642,630.05',
-        type: 'Assets Under Management'
+        fund: '966',
+        type: 'Active Users'
     },
 ]
 
