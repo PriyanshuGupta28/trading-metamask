@@ -54,7 +54,7 @@ const Home: React.FC = () => {
                 <Grid container spacing={2}>
                     {investments?.map((item, index) => (
                         <Grid item xs={12} md={3}>
-                            <Card key={index} fund={item?.fund} type={item?.type} />
+                            <Card key={index} fund={item?.fund} investmentType={item?.investmentType} />
                         </Grid>
                     ))}
                 </Grid>
