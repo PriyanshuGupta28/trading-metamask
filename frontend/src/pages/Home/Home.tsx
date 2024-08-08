@@ -35,6 +35,7 @@ const Home: React.FC = () => {
                     fund: investment[0],
                     investmentType: investment[1],
                 }));
+                console.log(formattedInvestments, "fetching data from")
                 setInvestments(formattedInvestments);
             } catch (err) {
                 setError(err.message);
