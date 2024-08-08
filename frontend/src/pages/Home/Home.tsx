@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import HeroSection from '../../components/HeroSection/HeroSection'
 import { Grid, Stack, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -9,46 +9,10 @@ import Lottie from 'lottie-react'
 import Faq from '../../components/Faq/Faq'
 import Card from '../../components/Card/Card'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
-import getContractInstance from '../../contract/contractInstance';
-
-interface InvestmentData {
-    fund: string;
-    investmentType: string;
-}
-
+import { CardData } from '../../Utilities/utilitiesData'
+import Test from '../../components/Test/Test'
 
 const Home: React.FC = () => {
-    const [investmentCount, setInvestmentCount] = useState<number>(0);
-    const [investments, setInvestments] = useState<InvestmentData[]>([]);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchInvestmentData = async () => {
-            try {
-                const contractInstance = await getContractInstance();
-                const count = await contractInstance.methods.getInvestmentCount().call();
-                setInvestmentCount(Number(count));
-
-                const investmentPromises = [];
-                for (let i = 0; i < count; i++) {
-                    investmentPromises.push(contractInstance.methods.getInvestment(i).call());
-                }
-
-                const investmentsData = await Promise.all(investmentPromises);
-                const formattedInvestments = investmentsData.map((investment: [string, string]) => ({
-                    fund: investment[0],
-                    investmentType: investment[1],
-                }));
-                setInvestments(formattedInvestments);
-            } catch (err) {
-                setError(err.message);
-            }
-        };
-
-        fetchInvestmentData();
-    }, []);
-
-    console.log(investments, "investments")
     return (
         <Stack sx={{
             justifyContent: 'center',
@@ -57,9 +21,9 @@ const Home: React.FC = () => {
             <Stack sx={{ width: '90%', gap: { xs: 5, md: 3 } }}>
                 <HeroSection />
                 <Grid container spacing={2}>
-                    {investments?.map((item, index) => (
+                    {CardData?.map((item, index) => (
                         <Grid item xs={12} md={3}>
-                            <Card key={index} fund={item?.fund} type={item?.investmentType} />
+                            <Card key={index} fund={item?.fund} type={item?.type} />
                         </Grid>
                     ))}
                 </Grid>
@@ -165,6 +129,7 @@ const Home: React.FC = () => {
                 <SocialMedia />
                 <Faq />
             </Stack>
+            <Test />
         </Stack>
     )
 }
