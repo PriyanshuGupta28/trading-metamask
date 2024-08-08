@@ -5,7 +5,7 @@ import InvestmentContract from "../../../blockchain/build/contracts/InvestmentCo
 const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
 
 const getContractInstance = async () => {
-    const networkId = (await web3.eth.net.getId()).toString();  // Convert bigint to string
+    const networkId = (await web3.eth.net.getId()).toString();
     const deployedNetwork = InvestmentContract.networks[networkId];
 
     if (!deployedNetwork) {
