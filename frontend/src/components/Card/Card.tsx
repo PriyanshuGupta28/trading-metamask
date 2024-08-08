@@ -3,7 +3,7 @@ import React from 'react'
 import { rootColors } from '../../Utilities/rootColors'
 import { cardDetailsTypes } from '../../Utilities/types'
 
-const Card: React.FC<cardDetailsTypes> = ({ fund, type }) => {
+const Card: React.FC<cardDetailsTypes> = ({ fund, investmentType }) => {
     return (
         <Stack
             sx={{
@@ -16,9 +16,9 @@ const Card: React.FC<cardDetailsTypes> = ({ fund, type }) => {
 
             }}>
             <Typography sx={{ fontSize: "30px", fontWeight: 700 }}>
-                {type === "Active Users" || type === "Average monthly yield" ? null : "$"} {fund}
+                {investmentType === "Active Users" || investmentType === "Average monthly yield" ? null : "$"} {fund}
             </Typography>
-            <Typography>{type}</Typography>
+            <Typography>{investmentType}</Typography>
         </Stack>
     )
 }
