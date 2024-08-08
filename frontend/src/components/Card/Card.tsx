@@ -15,7 +15,9 @@ const Card: React.FC<cardDetailsTypes> = ({ fund, type }) => {
                 borderRadius: '0.75rem'
 
             }}>
-            <Typography sx={{ fontSize: "30px", fontWeight: 700 }}>${fund}</Typography>
+            <Typography sx={{ fontSize: "30px", fontWeight: 700 }}>
+                {type === "Active Users" || type === "Average monthly yield" ? null : "$"} {fund}
+            </Typography>
             <Typography>{type}</Typography>
         </Stack>
     )
