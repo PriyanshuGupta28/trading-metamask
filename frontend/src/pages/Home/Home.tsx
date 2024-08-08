@@ -10,7 +10,7 @@ import Faq from '../../components/Faq/Faq'
 import Card from '../../components/Card/Card'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import { CardData } from '../../Utilities/utilitiesData'
-import Test from '../../components/Test/Test'
+
 
 const Home: React.FC = () => {
     return (
@@ -129,7 +129,6 @@ const Home: React.FC = () => {
                 <SocialMedia />
                 <Faq />
             </Stack>
-            <Test />
         </Stack>
     )
 }
