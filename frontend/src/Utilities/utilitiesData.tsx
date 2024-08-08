@@ -3,55 +3,55 @@ import { cardDetailsTypes } from "./types";
 export const CardData: cardDetailsTypes[] = [
     {
         fund: '53,642,630.05',
-        type: 'Assets Under Management'
+        investmentType: 'Assets Under Management'
     },
     {
         fund: '47,390,696.35',
-        type: 'Distributed to Investors'
+        investmentType: 'Distributed to Investors'
     },
     {
         fund: '14.91%',
-        type: 'Average monthly yield'
+        investmentType: 'Average monthly yield'
     },
     {
         fund: '966',
-        type: 'Active Users'
+        investmentType: 'Active Users'
     },
 ]
 
 export const UserDepositCardData: cardDetailsTypes[] = [
     {
         fund: '100',
-        type: "Account Balance"
+        investmentType: "Account Balance"
     },
     {
         fund: '200',
-        type: "Total Deposited"
+        investmentType: "Total Deposited"
     },
     {
         fund: '300',
-        type: "Monthly Returns"
+        investmentType: "Monthly Returns"
     },
     {
         fund: '400',
-        type: "Total Returns"
+        investmentType: "Total Returns"
     },
 ]
 export const UserWithdrawCardData: cardDetailsTypes[] = [
     {
         fund: '100',
-        type: "Account Balance"
+        investmentType: "Account Balance"
     },
     {
         fund: '200',
-        type: "Total Withdraw"
+        investmentType: "Total Withdraw"
     },
     {
         fund: '300',
-        type: "Pending Withdraw"
+        investmentType: "Pending Withdraw"
     },
     {
         fund: '400',
-        type: "Total Fees"
+        investmentType: "Total Fees"
     },
 ]
